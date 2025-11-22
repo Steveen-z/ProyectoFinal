@@ -1,0 +1,6 @@
+﻿CREATE TABLE Docentes (
+    IdDocente INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+    IdUsuario INT UNIQUE FOREIGN KEY REFERENCES Usuarios(IdUsuario)
+);
