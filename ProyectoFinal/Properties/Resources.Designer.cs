@@ -63,9 +63,29 @@ namespace ProyectoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BarraBusqueda {
+            get {
+                object obj = ResourceManager.GetObject("BarraBusqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_and_White_Illustrative_Education_Badge_Logo {
             get {
                 object obj = ResourceManager.GetObject("Blue and White Illustrative Education Badge Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Diseño sin título (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace ProyectoFinal.Properties {
         internal static System.Drawing.Bitmap Logo_IXPJT {
             get {
                 object obj = ResourceManager.GetObject("Logo IXPJT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewUser__1_ {
+            get {
+                object obj = ResourceManager.GetObject("NewUser (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

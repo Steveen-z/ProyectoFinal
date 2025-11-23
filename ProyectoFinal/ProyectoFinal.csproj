@@ -207,6 +207,24 @@
     <Compile Include="Clases\NivelesEducativos.cs" />
     <Compile Include="Clases\Notas.cs" />
     <Compile Include="Clases\Usuarios.cs" />
+    <Compile Include="Forms\fmrAgregarEspecializacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrAgregarEspecializacion.Designer.cs">
+      <DependentUpon>fmrAgregarEspecializacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmrEdicionEspecializacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrEdicionEspecializacion.Designer.cs">
+      <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmrGestionEspecializaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrGestionEspecializaciones.Designer.cs">
+      <DependentUpon>fmrGestionEspecializaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmrLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +256,15 @@
     <Compile Include="Repositorios\EstudiantesRepository.cs" />
     <Compile Include="Repositorios\NotasRepository.cs" />
     <Compile Include="Repositorios\UsuariosRepository.cs" />
+    <EmbeddedResource Include="Forms\fmrAgregarEspecializacion.resx">
+      <DependentUpon>fmrAgregarEspecializacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrEdicionEspecializacion.resx">
+      <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrGestionEspecializaciones.resx">
+      <DependentUpon>fmrGestionEspecializaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrLogin.resx">
       <DependentUpon>fmrLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +327,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Blue and White Illustrative Education Badge Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarraBusqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewUser %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

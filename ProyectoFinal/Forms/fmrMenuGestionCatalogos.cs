@@ -16,7 +16,9 @@ namespace ProyectoFinal.Forms
 
         private void btnGestionEspecializaciones_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Abriendo formulario: Gestión de Especializaciones (Carreras Técnicas)", "Gestión de Catálogos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fmrGestionEspecializaciones gestionEspecializaciones = new fmrGestionEspecializaciones();
+            gestionEspecializaciones.Show();
+            this.Hide();
         }
 
         private void btnGestionAsignaturas_Click(object sender, EventArgs e)

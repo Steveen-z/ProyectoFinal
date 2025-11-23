@@ -273,5 +273,55 @@ namespace ProyectoFinal.Repositorios
                 }
             }
         }
+        // Modificar Especialización
+        public bool ModificarEspecializacion(int id, string nuevoNombre)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = "UPDATE Especializaciones SET NombreEspecializacion = @NuevoNombre WHERE IdEspecializacion = @Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NuevoNombre", nuevoNombre);
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+        
+        // Eliminar Especialización
+        public bool EliminarEspecializacion(int id)
+        {
+
+            // Detalle a completaaaaaaaaaaaaaaaaaaaaaar
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM Especializaciones WHERE IdEspecializacion = @Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        //Crear Especialización
+        public bool AgregarEspecializacion(string nombre)
+        {
+            // Verifica si la especialización ya existe para evitar duplicados
+            if (ObtenerIdEspecializacion(nombre) != null)
+            {
+                return false; // Indica que ya existe y no se agregó
+            }
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                // La consulta de insercin
+                string query = "INSERT INTO Especializaciones (NombreEspecializacion) VALUES (@Nombre)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                conn.Open();
+
+                // Devuelve true si se inserto al menos una fila
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }

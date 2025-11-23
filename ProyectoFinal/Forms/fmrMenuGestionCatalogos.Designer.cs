@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGestionAsignaturas = new System.Windows.Forms.Button();
             this.btnGestionEspecializaciones = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             // 
             this.panel2.BackgroundImage = global::ProyectoFinal.Properties.Resources.FondoLogin2;
             this.panel2.Controls.Add(this.btnRegresar);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnGestionAsignaturas);
             this.panel2.Controls.Add(this.btnGestionEspecializaciones);
@@ -79,17 +77,6 @@
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(688, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 18);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Administrador";
             // 
             // label1
             // 
@@ -164,7 +151,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGestionAsignaturas;
         private System.Windows.Forms.Button btnGestionEspecializaciones;

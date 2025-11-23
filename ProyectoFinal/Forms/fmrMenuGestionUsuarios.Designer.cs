@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnModificarEliminarUsuario = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             // 
             this.panel1.BackgroundImage = global::ProyectoFinal.Properties.Resources.FondoLogin2;
             this.panel1.Controls.Add(this.btnRegresar);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnModificarEliminarUsuario);
             this.panel1.Controls.Add(this.btnCrearUsuario);
@@ -67,17 +65,6 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(688, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 18);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Administrador";
             // 
             // label1
             // 
@@ -148,7 +135,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnModificarEliminarUsuario;
         private System.Windows.Forms.Button btnCrearUsuario;
