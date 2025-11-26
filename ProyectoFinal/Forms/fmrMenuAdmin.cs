@@ -36,5 +36,10 @@ namespace ProyectoFinal.Forms
             loginForm.Show();
             this.Close();
         }
+
+        private void fmrMenuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

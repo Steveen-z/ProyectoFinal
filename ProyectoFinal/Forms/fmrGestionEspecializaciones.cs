@@ -136,5 +136,10 @@ namespace ProyectoFinal.Forms
                 formEdicion.ShowDialog();
             }
         }
+
+        private void fmrGestionEspecializaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

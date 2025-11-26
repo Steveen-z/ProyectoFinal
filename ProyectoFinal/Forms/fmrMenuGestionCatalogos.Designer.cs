@@ -138,6 +138,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fmrMenuGestionCatalogos";
             this.Text = "fmrMenuGestionCatalogos";
+            this.Load += new System.EventHandler(this.fmrMenuGestionCatalogos_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

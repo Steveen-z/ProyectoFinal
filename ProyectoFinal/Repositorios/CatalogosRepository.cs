@@ -207,6 +207,8 @@ namespace ProyectoFinal.Repositorios
             }
         }
 
+
+
         public void InicializarAsignaturas()
         {
             int? idGen1 = ObtenerIdNivel("General", 1);
@@ -308,7 +310,7 @@ namespace ProyectoFinal.Repositorios
             // Verifica si la especialización ya existe para evitar duplicados
             if (ObtenerIdEspecializacion(nombre) != null)
             {
-                return false; // Indica que ya existe y no se agregó
+                return false; 
             }
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -319,9 +321,166 @@ namespace ProyectoFinal.Repositorios
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
                 conn.Open();
 
-                // Devuelve true si se inserto al menos una fila
                 return cmd.ExecuteNonQuery() > 0;
             }
+        }
+
+
+        // Método para cargar Niveles filtrados para el ComboBox 
+
+
+        public DataTable ObtenerNivelesPorEspecializacion(int? idEspecializacion)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = @"
+            SELECT 
+                IdNivel, 
+                TipoBachillerato + ' ' + CAST(Anio AS VARCHAR) + '° Año' AS NombreCompleto
+            FROM NivelesEducativos 
+            ORDER BY TipoBachillerato DESC, Anio ASC"; 
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+
+        // Método para cargar Asignaturas filtradas
+        public DataTable ObtenerAsignaturas(int? idNivel, int? idEspecializacion)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                    SELECT 
+                        A.IdAsignatura, 
+                        A.NombreAsignatura, 
+                        N.TipoBachillerato + ' ' + CAST(N.Anio AS VARCHAR) AS Nivel,
+                        ISNULL(E.NombreEspecializacion, 'General') AS Especializacion
+                    FROM Asignaturas A
+                    INNER JOIN NivelesEducativos N ON A.IdNivel = N.IdNivel
+                    LEFT JOIN Especializaciones E ON A.IdEspecializacion = E.IdEspecializacion
+                    WHERE 
+                        (@IdNivel IS NULL OR A.IdNivel = @IdNivel) AND
+                        (@IdEspecializacion IS NULL OR A.IdEspecializacion = @IdEspecializacion)
+                    ORDER BY N.Anio, A.NombreAsignatura";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IdNivel", (object)idNivel ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@IdEspecializacion", (object)idEspecializacion ?? DBNull.Value);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+        // Método para obtener una Asignatura por Id
+        public Asignaturas ObtenerAsignaturaPorId(int idAsignatura)
+        {
+            Asignaturas asignatura = null;
+            string query = "SELECT IdAsignatura, NombreAsignatura, IdNivel, IdEspecializacion FROM Asignaturas WHERE IdAsignatura = @IdAsignatura";
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    asignatura = new Asignaturas
+                    {
+                        IdAsignatura = Convert.ToInt32(reader["IdAsignatura"]),
+                        NombreAsignatura = reader["NombreAsignatura"].ToString(),
+                        IdNivel = Convert.ToInt32(reader["IdNivel"]),
+                        IdEspecializacion = reader.IsDBNull(reader.GetOrdinal("IdEspecializacion")) ? (int?)null : Convert.ToInt32(reader["IdEspecializacion"])
+                    };
+                }
+            }
+            return asignatura;
+        }
+
+        // Mtodo para Agregar una nueva Asignatura 
+        public bool AgregarAsignatura(string nombre, int idNivel, int? idEspecializacion)
+        {
+            string query = "INSERT INTO Asignaturas (NombreAsignatura, IdNivel, IdEspecializacion) VALUES (@Nombre, @IdNivel, @IdEspecializacion)";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@IdNivel", idNivel);
+                cmd.Parameters.AddWithValue("@IdEspecializacion", (object)idEspecializacion ?? DBNull.Value);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        // Metodo para Modificar una Asignatura
+        public bool ModificarAsignatura(int idAsignatura, string nombre, int idNivel, int? idEspecializacion)
+        {
+            string query = "UPDATE Asignaturas SET NombreAsignatura = @Nombre, IdNivel = @IdNivel, IdEspecializacion = @IdEspecializacion WHERE IdAsignatura = @IdAsignatura";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@IdNivel", idNivel);
+                cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
+                cmd.Parameters.AddWithValue("@IdEspecializacion", (object)idEspecializacion ?? DBNull.Value);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        // Método para Eliminar una Asignatura 
+        public bool EliminarAsignatura(int idAsignatura)
+        {
+            string query = "DELETE FROM Asignaturas WHERE IdAsignatura = @IdAsignatura";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public DataTable ObtenerEspecializacionesDataTable()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT IdEspecializacion, NombreEspecializacion FROM Especializaciones ORDER BY NombreEspecializacion ASC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
+       
+        public DataTable ObtenerNivelesDataTable()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                
+                string query = "SELECT IdNivel, TipoBachillerato + ' ' + CAST(Anio AS VARCHAR) + '° Año' AS NombreCompleto FROM NivelesEducativos ORDER BY TipoBachillerato DESC, Anio ASC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
         }
     }
 }

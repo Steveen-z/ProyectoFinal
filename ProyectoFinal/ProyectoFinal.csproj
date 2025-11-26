@@ -213,11 +213,29 @@
     <Compile Include="Forms\fmrAgregarEspecializacion.Designer.cs">
       <DependentUpon>fmrAgregarEspecializacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fmrAltaAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrAltaAsignatura.Designer.cs">
+      <DependentUpon>fmrAltaAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmrEdicionAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrEdicionAsignatura.Designer.cs">
+      <DependentUpon>fmrEdicionAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmrEdicionEspecializacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\fmrEdicionEspecializacion.Designer.cs">
       <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmrGestionAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrGestionAsignaturas.Designer.cs">
+      <DependentUpon>fmrGestionAsignaturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\fmrGestionEspecializaciones.cs">
       <SubType>Form</SubType>
@@ -249,11 +267,18 @@
     <Compile Include="Forms\fmrMenuGestionUsuarios.Designer.cs">
       <DependentUpon>fmrMenuGestionUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmConsultaExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConsultaExpediente.Designer.cs">
+      <DependentUpon>frmConsultaExpediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CatalogosRepository.cs" />
     <Compile Include="Repositorios\DocentesRepository.cs" />
     <Compile Include="Repositorios\EstudiantesRepository.cs" />
+    <Compile Include="Repositorios\ExpedienteRepository.cs" />
     <Compile Include="Repositorios\NotasRepository.cs" />
     <Compile Include="Repositorios\UsuariosRepository.cs" />
     <EmbeddedResource Include="Forms\fmrAgregarEspecializacion.resx">
@@ -261,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrEdicionEspecializacion.resx">
       <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrGestionAsignaturas.resx">
+      <DependentUpon>fmrGestionAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrGestionEspecializaciones.resx">
       <DependentUpon>fmrGestionEspecializaciones.cs</DependentUpon>
@@ -276,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrMenuGestionUsuarios.resx">
       <DependentUpon>fmrMenuGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConsultaExpediente.resx">
+      <DependentUpon>frmConsultaExpediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

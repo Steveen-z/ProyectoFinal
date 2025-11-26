@@ -23,7 +23,9 @@ namespace ProyectoFinal.Forms
 
         private void btnGestionAsignaturas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Abriendo formulario: Gestión de Asignaturas (Materias)", "Gestión de Catálogos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fmrGestionAsignaturas GestionAsignaturas = new fmrGestionAsignaturas();
+            GestionAsignaturas.Show();
+            this.Hide();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -31,6 +33,11 @@ namespace ProyectoFinal.Forms
             fmrMenuAdmin menuAdmin = new fmrMenuAdmin();
             menuAdmin.Show();
             this.Close();
+        }
+
+        private void fmrMenuGestionCatalogos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

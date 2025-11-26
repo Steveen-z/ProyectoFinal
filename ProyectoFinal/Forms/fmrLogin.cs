@@ -28,14 +28,14 @@ namespace ProyectoFinal.Forms
         {
             try
             {
-                // 1. Inicialización de Catálogos
+                // Inicialización de Catálogos
                 int idNivelBase = _catalogosRepository.InicializarNiveles();
                 _catalogosRepository.InicializarEspecializaciones();
                 _catalogosRepository.InicializarAsignaturas();
 
                 int? idEspecializacionNull = null;
 
-                // 2. Inicialización de Usuarios Fijos
+                // 2Inicialización de Usuarios Fijos
 
                 string codAdmin = "ADMIN01";
                 if (_usuariosRepository.ObtenerUsuarioPorCodigo(codAdmin) == null)
@@ -127,7 +127,7 @@ namespace ProyectoFinal.Forms
                 }
                 else if (user.Rol == "Estudiante")
                 {
-                    // new frmConsultaExpediente(user).Show();
+                    menuForm = new fmrConsultaExpediente(user, codigo);
                 }
 
                 this.Hide();

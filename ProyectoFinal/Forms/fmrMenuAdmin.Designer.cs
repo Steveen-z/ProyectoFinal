@@ -50,9 +50,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 366);
+            this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
             // 
             // btnCerrarSesion
@@ -61,10 +61,10 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(182, 223);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(243, 274);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(255, 37);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(340, 46);
             this.btnCerrarSesion.TabIndex = 33;
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -75,10 +75,9 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(493, 346);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(657, 426);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(143, 25);
             this.label2.TabIndex = 32;
             this.label2.Text = "Administrador";
             // 
@@ -87,10 +86,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 77);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(364, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 31);
+            this.label1.Size = new System.Drawing.Size(111, 38);
             this.label1.TabIndex = 31;
             this.label1.Text = "Menú ";
             // 
@@ -100,10 +98,10 @@
             this.btnGestionCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionCatalogo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGestionCatalogo.Location = new System.Drawing.Point(182, 170);
-            this.btnGestionCatalogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionCatalogo.Location = new System.Drawing.Point(243, 209);
+            this.btnGestionCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGestionCatalogo.Name = "btnGestionCatalogo";
-            this.btnGestionCatalogo.Size = new System.Drawing.Size(255, 37);
+            this.btnGestionCatalogo.Size = new System.Drawing.Size(340, 46);
             this.btnGestionCatalogo.TabIndex = 30;
             this.btnGestionCatalogo.Text = "Gestión de cátalogo";
             this.btnGestionCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -116,10 +114,10 @@
             this.btnGestionUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionUsuarios.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGestionUsuarios.Location = new System.Drawing.Point(182, 119);
-            this.btnGestionUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionUsuarios.Location = new System.Drawing.Point(243, 146);
+            this.btnGestionUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGestionUsuarios.Name = "btnGestionUsuarios";
-            this.btnGestionUsuarios.Size = new System.Drawing.Size(255, 37);
+            this.btnGestionUsuarios.Size = new System.Drawing.Size(340, 46);
             this.btnGestionUsuarios.TabIndex = 29;
             this.btnGestionUsuarios.Text = "Gestión de usuarios";
             this.btnGestionUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,24 +129,25 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.Blue_and_White_Illustrative_Education_Badge_Logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 130);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
             // fmrMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fmrMenuAdmin";
             this.Text = "Menu Administrador";
+            this.Load += new System.EventHandler(this.fmrMenuAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

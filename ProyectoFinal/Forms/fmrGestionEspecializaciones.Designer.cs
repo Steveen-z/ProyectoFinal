@@ -60,22 +60,24 @@
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 587);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(751, 477);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvEspecializaciones);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 103);
+            this.panel3.Location = new System.Drawing.Point(2, 83);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(995, 391);
+            this.panel3.Size = new System.Drawing.Size(747, 319);
             this.panel3.TabIndex = 0;
             // 
             // dgvEspecializaciones
@@ -83,19 +85,21 @@
             this.dgvEspecializaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecializaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecializaciones.Location = new System.Drawing.Point(0, 0);
+            this.dgvEspecializaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvEspecializaciones.Name = "dgvEspecializaciones";
             this.dgvEspecializaciones.RowHeadersWidth = 51;
             this.dgvEspecializaciones.RowTemplate.Height = 24;
-            this.dgvEspecializaciones.Size = new System.Drawing.Size(995, 391);
+            this.dgvEspecializaciones.Size = new System.Drawing.Size(747, 319);
             this.dgvEspecializaciones.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(995, 54);
+            this.panel1.Size = new System.Drawing.Size(747, 45);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -103,9 +107,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 6);
+            this.label1.Location = new System.Drawing.Point(208, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(434, 38);
+            this.label1.Size = new System.Drawing.Size(353, 31);
             this.label1.TabIndex = 32;
             this.label1.Text = "Gestión de especializaciones";
             // 
@@ -114,9 +119,10 @@
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 63);
+            this.panel2.Location = new System.Drawing.Point(2, 51);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(995, 34);
+            this.panel2.Size = new System.Drawing.Size(747, 28);
             this.panel2.TabIndex = 1;
             // 
             // txtBusqueda
@@ -124,17 +130,19 @@
             this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBusqueda.Location = new System.Drawing.Point(227, 7);
+            this.txtBusqueda.Location = new System.Drawing.Point(170, 6);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(583, 21);
+            this.txtBusqueda.Size = new System.Drawing.Size(437, 17);
             this.txtBusqueda.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.Diseño_sin_título__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(675, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(506, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -144,9 +152,10 @@
             this.panel4.Controls.Add(this.btnRegresar);
             this.panel4.Controls.Add(this.btnAgregarEspecializacion);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 500);
+            this.panel4.Location = new System.Drawing.Point(2, 406);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(995, 84);
+            this.panel4.Size = new System.Drawing.Size(747, 69);
             this.panel4.TabIndex = 2;
             // 
             // btnRegresar
@@ -155,9 +164,10 @@
             this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegresar.Location = new System.Drawing.Point(9, 28);
+            this.btnRegresar.Location = new System.Drawing.Point(7, 23);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(117, 34);
+            this.btnRegresar.Size = new System.Drawing.Size(88, 28);
             this.btnRegresar.TabIndex = 31;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -170,9 +180,10 @@
             this.btnAgregarEspecializacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarEspecializacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarEspecializacion.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregarEspecializacion.Location = new System.Drawing.Point(756, 28);
+            this.btnAgregarEspecializacion.Location = new System.Drawing.Point(567, 23);
+            this.btnAgregarEspecializacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregarEspecializacion.Name = "btnAgregarEspecializacion";
-            this.btnAgregarEspecializacion.Size = new System.Drawing.Size(230, 34);
+            this.btnAgregarEspecializacion.Size = new System.Drawing.Size(172, 28);
             this.btnAgregarEspecializacion.TabIndex = 30;
             this.btnAgregarEspecializacion.Text = "Agregar especializacion";
             this.btnAgregarEspecializacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -181,12 +192,14 @@
             // 
             // fmrGestionEspecializaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 587);
+            this.ClientSize = new System.Drawing.Size(751, 477);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fmrGestionEspecializaciones";
             this.Text = "fmrGestionEspecializaciones";
+            this.Load += new System.EventHandler(this.fmrGestionEspecializaciones_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecializaciones)).EndInit();
