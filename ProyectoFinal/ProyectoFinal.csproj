@@ -284,6 +284,9 @@
     <EmbeddedResource Include="Forms\fmrAgregarEspecializacion.resx">
       <DependentUpon>fmrAgregarEspecializacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrEdicionAsignatura.resx">
+      <DependentUpon>fmrEdicionAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrEdicionEspecializacion.resx">
       <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
     </EmbeddedResource>

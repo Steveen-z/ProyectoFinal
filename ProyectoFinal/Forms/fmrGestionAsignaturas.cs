@@ -199,8 +199,8 @@ namespace ProyectoFinal.Forms
                     int.TryParse(row.Cells["IdAsignatura"].Value.ToString(), out int idAsignatura))
                 {
                     // Abrir fmrEdicionAsignatura (Se debe crear)
-                    //var edicionForm = new fmrEdicionAsignatura(idAsignatura, this);
-                    //edicionForm.ShowDialog();
+                    var edicionForm = new fmrEdicionAsignatura(idAsignatura, this);
+                    edicionForm.ShowDialog();
                 }
             }
         }

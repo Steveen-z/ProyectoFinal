@@ -408,6 +408,40 @@ namespace ProyectoFinal.Repositorios
             return asignatura;
         }
 
+
+        public bool AsignaturaEstaEnUso(int idAsignatura)
+        {
+            bool estaEnUso = false;
+
+            string nombreTablaNotas = "NombreCorrectoDeTuTabla";
+
+            string query = $@"
+        SELECT 
+            COUNT(IdRegistro) 
+        FROM {nombreTablaNotas} 
+        WHERE IdAsignatura = @IdAsignatura";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
+                    conn.Open();
+
+                    // 2. Ejecuta la consulta y asigna el resultado a la variable.
+                    int count = (int)cmd.ExecuteScalar();
+                    estaEnUso = count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return estaEnUso;
+        }
+
         // Mtodo para Agregar una nueva Asignatura 
         public bool AgregarAsignatura(string nombre, int idNivel, int? idEspecializacion)
         {

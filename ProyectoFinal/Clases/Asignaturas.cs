@@ -11,8 +11,9 @@ namespace ProyectoFinal.Clases
         public int IdAsignatura { get; set; }
         public string NombreAsignatura { get; set; }
 
-        public int IdNivel { get; set; }
-        public int? IdEspecializacion { get; set; } 
+        public int? IdNivel { get; set; }
+        public int? IdEspecializacion { get; set; }
+
 
         public Asignaturas() { }
 
