@@ -15,7 +15,7 @@ namespace ProyectoFinal.Repositorios
             _connectionString = connectionString;
         }
 
-        // CONSULTA DE CATÁLOGOS
+        // CONSULTA DE CATALOGOS
 
         public List<NivelesEducativos> ObtenerNiveles()
         {
@@ -99,7 +99,7 @@ namespace ProyectoFinal.Repositorios
             return lista;
         }
 
-        // INICIALIZACIÓN DE DATOS 
+        // INICIALIZACION DE DATOS 
 
         private int? ObtenerIdNivel(string tipoBachillerato, int anio)
         {
@@ -275,7 +275,7 @@ namespace ProyectoFinal.Repositorios
                 }
             }
         }
-        // Modificar Especialización
+        // Modificar Especializacion
         public bool ModificarEspecializacion(int id, string nuevoNombre)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -289,7 +289,7 @@ namespace ProyectoFinal.Repositorios
             }
         }
         
-        // Eliminar Especialización
+        // Eliminar Especializacioon   NO va implementada
         public bool EliminarEspecializacion(int id)
         {
 
@@ -304,10 +304,10 @@ namespace ProyectoFinal.Repositorios
             }
         }
 
-        //Crear Especialización
+        //Crear Especializacion
         public bool AgregarEspecializacion(string nombre)
         {
-            // Verifica si la especialización ya existe para evitar duplicados
+            // Verifica si la especializacion ya existe para evitar duplicados
             if (ObtenerIdEspecializacion(nombre) != null)
             {
                 return false; 
@@ -326,7 +326,7 @@ namespace ProyectoFinal.Repositorios
         }
 
 
-        // Método para cargar Niveles filtrados para el ComboBox 
+        // Metodo para cargar Niveles filtrados para el ComboBox 
 
 
         public DataTable ObtenerNivelesPorEspecializacion(int? idEspecializacion)
@@ -351,7 +351,7 @@ namespace ProyectoFinal.Repositorios
         }
 
 
-        // Método para cargar Asignaturas filtradas
+        // Metodo para cargar Asignaturas filtradas
         public DataTable ObtenerAsignaturas(int? idNivel, int? idEspecializacion)
         {
             DataTable dt = new DataTable();
@@ -381,7 +381,7 @@ namespace ProyectoFinal.Repositorios
             return dt;
         }
 
-        // Método para obtener una Asignatura por Id
+        // Metodo para obtener una Asignatura por Id
         public Asignaturas ObtenerAsignaturaPorId(int idAsignatura)
         {
             Asignaturas asignatura = null;
@@ -413,7 +413,7 @@ namespace ProyectoFinal.Repositorios
         {
             bool estaEnUso = false;
 
-            string nombreTablaNotas = "NombreCorrectoDeTuTabla";
+            string nombreTablaNotas = "RegistroNotas";
 
             string query = $@"
         SELECT 
@@ -429,7 +429,7 @@ namespace ProyectoFinal.Repositorios
                     cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
                     conn.Open();
 
-                    // 2. Ejecuta la consulta y asigna el resultado a la variable.
+                    // Ejecuta la consulta y asigna el resultado a la variable.
                     int count = (int)cmd.ExecuteScalar();
                     estaEnUso = count > 0;
                 }
@@ -475,7 +475,7 @@ namespace ProyectoFinal.Repositorios
             }
         }
 
-        // Método para Eliminar una Asignatura 
+        // Metodo para Eliminar una Asignatura tampoco se implementara de momento
         public bool EliminarAsignatura(int idAsignatura)
         {
             string query = "DELETE FROM Asignaturas WHERE IdAsignatura = @IdAsignatura";
@@ -483,6 +483,24 @@ namespace ProyectoFinal.Repositorios
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
+
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        
+        public bool InsertarAsignatura(string nombre, int idNivel, int? idEspecializacion)
+        {
+            string query = "INSERT INTO Asignaturas (NombreAsignatura, IdNivel, IdEspecializacion) VALUES (@Nombre, @IdNivel, @IdEspecializacion)";
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+
+                cmd.Parameters.AddWithValue("@IdNivel", idNivel);
+
+                cmd.Parameters.AddWithValue("@IdEspecializacion", (object)idEspecializacion ?? DBNull.Value);
 
                 conn.Open();
                 return cmd.ExecuteNonQuery() > 0;
@@ -502,7 +520,33 @@ namespace ProyectoFinal.Repositorios
             return dt;
         }
 
-       
+        public bool AsignaturaYaExiste(string nombre, int idNivel, int? idEspecializacion)
+        {
+            string query = @"
+        SELECT 
+            COUNT(IdAsignatura) 
+        FROM Asignaturas 
+        WHERE NombreAsignatura = @Nombre 
+          AND IdNivel = @IdNivel
+          AND COALESCE(IdEspecializacion, 0) = COALESCE(@IdEspecializacion, 0)";
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@IdNivel", idNivel);
+
+                cmd.Parameters.AddWithValue("@IdEspecializacion", (object)idEspecializacion ?? DBNull.Value);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+        }
+
+
+
         public DataTable ObtenerNivelesDataTable()
         {
             DataTable dt = new DataTable();

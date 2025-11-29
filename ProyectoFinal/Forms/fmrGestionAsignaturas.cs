@@ -27,7 +27,7 @@ namespace ProyectoFinal.Forms
             CargarAsignaturas();
         }
 
-        //CARGA Y CONFIGURACIÓN INICIAL
+        //CARGA Y CONFIGURACN INICIAL
 
 
         private void CargarEspecializaciones()
@@ -60,7 +60,7 @@ namespace ProyectoFinal.Forms
         {
             try
             {
-                // 1. Llama al método que trae todos los niveles
+                // Llama al método que trae todos los niveles
                 DataTable dtNivel = _catalogosRepository.ObtenerNivelesPorEspecializacion(idEspecializacion);
 
                 if (!dtNivel.Columns.Contains("IdNivel"))
@@ -68,7 +68,7 @@ namespace ProyectoFinal.Forms
                     return;
                 }
 
-                // MANIPULACIÓN DEL FILTRO DE COMBOBOX 
+                // MANIPULACION DEL FILTRO DE COMBOBOX 
 
                 // Creamos una nueva tabla para manipular los tipos y agregar el filtro
                 DataTable dtNivelConFiltro = dtNivel.Clone();
@@ -102,7 +102,6 @@ namespace ProyectoFinal.Forms
         {
             try
             {
-                // Carga la lista filtrada desde la BD
                 dgvAsignaturas.DataSource = _catalogosRepository.ObtenerAsignaturas(idNivel, idEspecializacion);
 
                 // Aplica la busqueda por texto
@@ -169,7 +168,7 @@ namespace ProyectoFinal.Forms
             }
         }
 
-        //  Limpiar: Limpia todos los filtros y recarga la DGV completa
+        //  Limpiar Limpia todos los filtros y recarga la DGV completa
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombreAsignatura.Clear();
@@ -184,9 +183,8 @@ namespace ProyectoFinal.Forms
 
         private void btnAgregarAsignatura_Click(object sender, EventArgs e)
         {
-            // Abre el formulario de alta (fmrAltaAsignatura)
-            //var altaForm = new fmrAltaAsignatura(this);
-            //altaForm.ShowDialog();
+            var altaForm = new fmrRegistroAsignaturas(this);
+            altaForm.ShowDialog();
         }
 
         private void dgvAsignaturas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -198,7 +196,6 @@ namespace ProyectoFinal.Forms
                 if (row.Cells["IdAsignatura"].Value != null &&
                     int.TryParse(row.Cells["IdAsignatura"].Value.ToString(), out int idAsignatura))
                 {
-                    // Abrir fmrEdicionAsignatura (Se debe crear)
                     var edicionForm = new fmrEdicionAsignatura(idAsignatura, this);
                     edicionForm.ShowDialog();
                 }
