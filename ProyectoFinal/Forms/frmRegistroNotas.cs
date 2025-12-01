@@ -8,12 +8,13 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal.Forms
 {
-    public partial class fmrGestionAsignaturas : Form
+    public partial class frmRegistroNotas : Form
     {
         private readonly CatalogosRepository _catalogosRepository;
         private readonly string _connectionString;
 
-        public fmrGestionAsignaturas()
+
+        public frmRegistroNotas()
         {
             InitializeComponent();
             _connectionString = ConfigurationManager.ConnectionStrings["ProyectoDB"].ConnectionString;
@@ -26,7 +27,6 @@ namespace ProyectoFinal.Forms
             ConfigurarDataGridView();
             CargarAsignaturas();
         }
-
 
         private void CargarEspecializaciones()
         {
@@ -53,12 +53,10 @@ namespace ProyectoFinal.Forms
             }
         }
 
-
         private void CargarNiveles(int? idEspecializacion)
         {
             try
             {
-                // Llama al método que trae todos los niveles
                 DataTable dtNivel = _catalogosRepository.ObtenerNivelesPorEspecializacion(idEspecializacion);
 
                 if (!dtNivel.Columns.Contains("IdNivel"))
@@ -68,7 +66,6 @@ namespace ProyectoFinal.Forms
 
                 // MANIPULACION DEL FILTRO DE COMBOBOX 
 
-                // Creamos una nueva tabla para manipular los tipos y agregar el filtro
                 DataTable dtNivelConFiltro = dtNivel.Clone();
 
                 dtNivelConFiltro.Columns["IdNivel"].DataType = typeof(System.Int32);
@@ -84,7 +81,6 @@ namespace ProyectoFinal.Forms
                     dtNivelConFiltro.ImportRow(row);
                 }
 
-                // Asignar la fuente de datos
                 cmbNivel.DataSource = dtNivelConFiltro;
                 cmbNivel.DisplayMember = "NombreCompleto";
                 cmbNivel.ValueMember = "IdNivel";
@@ -102,7 +98,6 @@ namespace ProyectoFinal.Forms
             {
                 dgvAsignaturas.DataSource = _catalogosRepository.ObtenerAsignaturas(idNivel, idEspecializacion);
 
-                // Aplica la busqueda por texto
                 txtNombreAsignatura_TextChanged(null, null);
             }
             catch (Exception ex)
@@ -118,14 +113,10 @@ namespace ProyectoFinal.Forms
             dgvAsignaturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAsignaturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Enlazar evento Doble Clic para Edicin
             dgvAsignaturas.CellDoubleClick += dgvAsignaturas_CellDoubleClick;
 
-            
+
         }
-
-
-        // LOGICA DE FILTROS Y BÚSQUEDA
 
         private void cmbEspecializacion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -166,7 +157,6 @@ namespace ProyectoFinal.Forms
             }
         }
 
-        //  Limpiar Limpia todos los filtros y recarga la DGV completa
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNombreAsignatura.Clear();
@@ -177,38 +167,40 @@ namespace ProyectoFinal.Forms
             CargarAsignaturas();
         }
 
-        
-
-        private void btnAgregarAsignatura_Click(object sender, EventArgs e)
-        {
-            var altaForm = new fmrRegistroAsignaturas(this);
-            altaForm.ShowDialog();
-        }
 
         private void dgvAsignaturas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvAsignaturas.Rows[e.RowIndex];
+            if (e.RowIndex < 0) return;
 
-                if (row.Cells["IdAsignatura"].Value != null &&
-                    int.TryParse(row.Cells["IdAsignatura"].Value.ToString(), out int idAsignatura))
-                {
-                    var edicionForm = new fmrEdicionAsignatura(idAsignatura, this);
-                    edicionForm.ShowDialog();
-                }
+            var row = dgvAsignaturas.Rows[e.RowIndex];
+
+            if (row.Cells["IdAsignatura"].Value == null)
+            {
+                MessageBox.Show("No se pudo obtener el ID de la asignatura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                int idAsignaturaSeleccionada = Convert.ToInt32(row.Cells["IdAsignatura"].Value);
+                string nombreAsignatura = row.Cells["NombreAsignatura"].Value.ToString();
+
+                fmrCapturaNotas formNotas = new fmrCapturaNotas(idAsignaturaSeleccionada, nombreAsignatura);
+                formNotas.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la captura de notas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-
-            fmrMenuGestionCatalogos menuCatalogos = new fmrMenuGestionCatalogos();
-            menuCatalogos.Show();
+            fmrLogin loginForm = new fmrLogin();
+            loginForm.Show();
             this.Close();
         }
-
-        private void fmrGestionAsignaturas_Load(object sender, EventArgs e)
+        private void frmRegistroNotas_Load(object sender, EventArgs e)
         {
 
         }

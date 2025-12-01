@@ -35,7 +35,7 @@ namespace ProyectoFinal.Forms
 
                 int? idEspecializacionNull = null;
 
-                // 2Inicialización de Usuarios Fijos
+                // 2Inicializacion de Usuarios Fijos
 
                 string codAdmin = "ADMIN01";
                 if (_usuariosRepository.ObtenerUsuarioPorCodigo(codAdmin) == null)
@@ -123,7 +123,7 @@ namespace ProyectoFinal.Forms
                 }
                 else if (user.Rol == "Docente")
                 {
-                    // new frmRegistroNotas(user).Show();
+                    new frmRegistroNotas().Show();
                 }
                 else if (user.Rol == "Estudiante")
                 {

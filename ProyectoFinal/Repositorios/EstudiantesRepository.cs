@@ -14,7 +14,6 @@ namespace ProyectoFinal.Repositorios
             _connectionString = connectionString;
         }
 
-        // Inscribir un nuevo Estudiante
         public void AgregarEstudiante(Estudiantes estudiante)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -29,7 +28,6 @@ namespace ProyectoFinal.Repositorios
                 cmd.Parameters.AddWithValue("@Apellido", estudiante.Apellido);
                 cmd.Parameters.AddWithValue("@IdNivel", estudiante.IdNivel);
 
-                // Manejo de valores NULL: Si IdEspecializacion es null, enviamos DBNull.Value.
                 cmd.Parameters.AddWithValue("@IdEspecializacion", (object)estudiante.IdEspecializacion ?? DBNull.Value);
 
                 cmd.Parameters.AddWithValue("@IdUsuario", estudiante.IdUsuario);
@@ -48,7 +46,6 @@ namespace ProyectoFinal.Repositorios
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                // Unimos Estudiantes con Usuarios para obtener el código de acceso.
                 string query = @"
                     SELECT 
                         E.IdEstudiante, E.Nombre, E.Apellido, E.IdNivel, E.IdEspecializacion, E.IdUsuario,
@@ -86,7 +83,6 @@ namespace ProyectoFinal.Repositorios
                         Apellido = reader["Apellido"].ToString(),
                         IdNivel = Convert.ToInt32(reader["IdNivel"]),
 
-                        // Lectura segura del campo NULLABLE
                         IdEspecializacion = reader.IsDBNull(reader.GetOrdinal("IdEspecializacion")) ? (int?)null : Convert.ToInt32(reader["IdEspecializacion"]),
 
                         IdUsuario = Convert.ToInt32(reader["IdUsuario"]),
@@ -95,7 +91,6 @@ namespace ProyectoFinal.Repositorios
                     });
                 }
             }
-            // Retornar lista
             return lista;
         }
     }

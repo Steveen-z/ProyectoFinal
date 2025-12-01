@@ -10,16 +10,14 @@ namespace ProyectoFinal.Clases
     {
         public int IdNota { get; set; }
 
-        // Claves Foráneas (FK)
         public int IdEstudiante { get; set; }
         public int IdAsignatura { get; set; }
 
-        // Datos de la nota
-        public string Periodo { get; set; } // Ej: 'Periodo 1', 'Periodo 2'
+        public string Periodo { get; set; } 
         public decimal Calificacion { get; set; }
         public DateTime FechaRegistro { get; set; }
 
-        // Propiedades auxiliares (Útiles para mostrar reportes sin hacer JOIN en C#)
+        
         public string NombreAsignatura { get; set; }
 
         public Notas() { }

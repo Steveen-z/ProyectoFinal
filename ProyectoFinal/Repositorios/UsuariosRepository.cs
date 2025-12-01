@@ -15,7 +15,6 @@ namespace ProyectoFinal.Repositorios
         }
 
 
-        // 1. GENERADOR DE CÓDIGOS 
 
         private string GenerarCodigoUnico(string prefijo)
         {
@@ -49,7 +48,6 @@ namespace ProyectoFinal.Repositorios
             return codigoGenerado;
         }
 
-        // 2. REGISTRO DE USUARIO 
 
         public int AgregarUsuario(string contraseña, string rol)
         {
@@ -137,7 +135,6 @@ namespace ProyectoFinal.Repositorios
 
                 conn.Open();
 
-                // 3. Ejecución y retorno del nuevo ID
                 newIdUsuario = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return newIdUsuario;

@@ -59,25 +59,20 @@ namespace ProyectoFinal.Repositorios
             return detalle;
         }
 
-        // Dentro de ExpedienteRepository.cs
 
-        // Dentro de ExpedienteRepository.cs
+       // Dentro de ExpedienteRepository.cs
 
-        public DataTable ObtenerNotasPorEstudiante(int idUsuario)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                string query = @"
-            -- 1. Obtener el IdEstudiante
+public DataTable ObtenerNotasPorEstudiante(int idUsuario)
+{
+    DataTable dt = new DataTable();
+    using (SqlConnection conn = new SqlConnection(_connectionString))
+    {
+        string query = @"
             DECLARE @IdEstudiante INT;
-            SELECT @IdEstudiante = IdEstudiante  
-            FROM Estudiantes  
-            WHERE IdUsuario = @IdUsuario;
+            SELECT @IdEstudiante = IdEstudiante FROM Estudiantes WHERE IdUsuario = @IdUsuario;
 
-            -- 2. Definir la base de notas solo para el estudiante actual
             WITH NotasBase AS (
-                SELECT 
+                SELECT  
                     N.IdAsignatura,
                     N.Periodo,
                     N.Calificacion
@@ -85,46 +80,45 @@ namespace ProyectoFinal.Repositorios
                 WHERE N.IdEstudiante = @IdEstudiante
             )
             
-            -- 3. Consulta Principal con PIVOT y cálculo del promedio
             SELECT
                 A.NombreAsignatura,
-                -- **CORRECCIÓN:** Usar el alias 'P' para acceder a las columnas pivotadas
-                ISNULL(P.P1, 0.0) AS 'P1',  
-                ISNULL(P.P2, 0.0) AS 'P2',  
-                ISNULL(P.P3, 0.0) AS 'P3',  
-                ISNULL(P.P4, 0.0) AS 'P4',
+           
+                ISNULL(P.[Periodo 1], 0.0) AS P1,  
+                ISNULL(P.[Periodo 2], 0.0) AS P2,  
+                ISNULL(P.[Periodo 3], 0.0) AS P3,  
+                ISNULL(P.[Periodo 4], 0.0) AS P4,
 
-                -- Calcula el Promedio Final
-                (ISNULL(P.P1, 0.0) + ISNULL(P.P2, 0.0) + ISNULL(P.P3, 0.0) + ISNULL(P.P4, 0.0)) / 4.0 AS NotaFinal
+              
+                (ISNULL(P.[Periodo 1], 0.0) + ISNULL(P.[Periodo 2], 0.0) + ISNULL(P.[Periodo 3], 0.0) + ISNULL(P.[Periodo 4], 0.0)) / 4.0 AS NotaFinal
             
             FROM Asignaturas A
 
-            -- 4. Unir Asignaturas con el Nivel/Especialización del Estudiante
-            INNER JOIN Estudiantes E 
-                ON A.IdNivel = E.IdNivel 
+            
+            INNER JOIN Estudiantes E  
+                ON A.IdNivel = E.IdNivel  
+                AND E.IdEstudiante = @IdEstudiante 
                 AND (A.IdEspecializacion = E.IdEspecializacion OR (A.IdEspecializacion IS NULL AND E.IdEspecializacion IS NULL))
-                AND E.IdEstudiante = @IdEstudiante -- Asegurar que solo traiga materias del estudiante
 
-            -- 5. LEFT JOIN con la tabla pivotada
             LEFT JOIN (
-                SELECT IdAsignatura, P1, P2, P3, P4
+                SELECT 
+                    IdAsignatura, 
+                    [Periodo 1], [Periodo 2], [Periodo 3], [Periodo 4]
                 FROM NotasBase
                 PIVOT (
                     MAX(Calificacion)
-                    FOR Periodo IN ([P1], [P2], [P3], [P4])
+                    FOR Periodo IN ([Periodo 1], [Periodo 2], [Periodo 3], [Periodo 4]) 
                 ) AS PVT
             ) P ON A.IdAsignatura = P.IdAsignatura
             
-            ORDER BY A.NombreAsignatura;"; // <- El cierre de las comillas dobles y el punto y coma final de SQL
+            ORDER BY A.NombreAsignatura;"; 
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                // El parámetro @IdUsuario se usa en el DECLARE SELECT inicial.
-                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+        SqlCommand cmd = new SqlCommand(query, conn);
+        cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-            }
-            return dt;
-        }
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        da.Fill(dt);
+    }
+    return dt;
+}
     }
 }
