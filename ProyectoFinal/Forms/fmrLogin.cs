@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Windows.Forms;
 
+
 namespace ProyectoFinal.Forms
 {
     public partial class fmrLogin : Form
@@ -12,7 +13,7 @@ namespace ProyectoFinal.Forms
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["ProyectoDB"].ConnectionString;
         private readonly UsuariosRepository _usuariosRepository;
         private readonly CatalogosRepository _catalogosRepository;
-
+        private readonly DocentesRepository _docentesRepository;
 
         public fmrLogin()
         {
@@ -20,6 +21,7 @@ namespace ProyectoFinal.Forms
 
             _usuariosRepository = new UsuariosRepository(_connectionString);
             _catalogosRepository = new CatalogosRepository(_connectionString);
+            _docentesRepository = new DocentesRepository(_connectionString);
 
             InicializarDatosSistema();
         }
@@ -43,11 +45,28 @@ namespace ProyectoFinal.Forms
                     _usuariosRepository.AgregarUsuarioFijo(codAdmin, "adminpass", "Admin");
                 }
 
-                string codDocente = "D10100000";
-                if (_usuariosRepository.ObtenerUsuarioPorCodigo(codDocente) == null)
+                string codigoDocenteBase = "D10100000";
+                string claveDocenteBase = "docentepass";
+                string rolDocente = "Docente";
+
+                Docentes docenteBase = new Docentes
                 {
-                    int idUserDocente = _usuariosRepository.AgregarUsuarioFijo(codDocente, "docentepass", "Docente");
-                    _usuariosRepository.AgregarDocente(idUserDocente, "Carla", "Reyes");
+                    Nombre = "Carla",
+                    Apellido = "Reyes",
+                    DUI = "00000000-0",
+                    Email = "carla.reyes@escuela.edu",
+                    Telefono = "7000-0000",
+                    CodigoAcceso = codigoDocenteBase
+                };
+
+                if (_docentesRepository.ObtenerDocentePorCodigoAcceso(codigoDocenteBase) == null)
+                {
+                    _docentesRepository.AgregarDocente(docenteBase, claveDocenteBase, rolDocente);
+                }
+                else
+                {
+                    
+                    _docentesRepository.ActualizarDocenteBase(docenteBase);
                 }
 
                 string codEstudiante = "E20250000";

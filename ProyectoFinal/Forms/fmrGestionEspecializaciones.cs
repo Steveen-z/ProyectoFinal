@@ -33,10 +33,8 @@ namespace ProyectoFinal.Forms
         {
             try
             {
-                // Obtener la lista completa de especializaciones de la base de datos
                 _listaEspecializaciones = _catalogosRepository.ObtenerEspecializaciones();
 
-                // Usar un tipo anónimo o un DataTable para la fuente de datos 
                 var dataSource = _listaEspecializaciones
                     .Select(esp => new { esp.IdEspecializacion, esp.NombreEspecializacion })
                     .ToList();
@@ -67,7 +65,6 @@ namespace ProyectoFinal.Forms
 
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                // Si el campo está vacío, restaurar la vista completa
                 var dataSource = _listaEspecializaciones
                     .Select(esp => new { esp.IdEspecializacion, esp.NombreEspecializacion })
                     .ToList();
@@ -75,7 +72,6 @@ namespace ProyectoFinal.Forms
             }
             else
             {
-                // Filtrar la lista localmente
                 var resultados = _listaEspecializaciones
                     .Where(esp => esp.NombreEspecializacion.ToLower().Contains(filtro))
                     .Select(esp => new { esp.IdEspecializacion, esp.NombreEspecializacion })
@@ -84,7 +80,6 @@ namespace ProyectoFinal.Forms
                 dgvEspecializaciones.DataSource = resultados;
             }
 
-            // Reaplicar el formato visual 
             if (dgvEspecializaciones.Columns.Contains("IdEspecializacion"))
             {
                 dgvEspecializaciones.Columns["IdEspecializacion"].Visible = false;

@@ -207,6 +207,12 @@
     <Compile Include="Clases\NivelesEducativos.cs" />
     <Compile Include="Clases\Notas.cs" />
     <Compile Include="Clases\Usuarios.cs" />
+    <Compile Include="Forms\fmrAgregarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrAgregarDocente.Designer.cs">
+      <DependentUpon>fmrAgregarDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmrAgregarEspecializacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,17 +243,35 @@
     <Compile Include="Forms\fmrEdicionEspecializacion.Designer.cs">
       <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fmrEditarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrEditarDocente.Designer.cs">
+      <DependentUpon>fmrEditarDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmrGestionAsignaturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\fmrGestionAsignaturas.Designer.cs">
       <DependentUpon>fmrGestionAsignaturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fmrGestionDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrGestionDocentes.Designer.cs">
+      <DependentUpon>fmrGestionDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmrGestionEspecializaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\fmrGestionEspecializaciones.Designer.cs">
       <DependentUpon>fmrGestionEspecializaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmrGestionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrGestionEstudiantes.Designer.cs">
+      <DependentUpon>fmrGestionEstudiantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\fmrLogin.cs">
       <SubType>Form</SubType>
@@ -273,6 +297,12 @@
     <Compile Include="Forms\fmrMenuGestionUsuarios.Designer.cs">
       <DependentUpon>fmrMenuGestionUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\fmrRecuperarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmrRecuperarClave.Designer.cs">
+      <DependentUpon>fmrRecuperarClave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmConsultaExpediente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +323,9 @@
     <Compile Include="Repositorios\ExpedienteRepository.cs" />
     <Compile Include="Repositorios\NotasRepository.cs" />
     <Compile Include="Repositorios\UsuariosRepository.cs" />
+    <EmbeddedResource Include="Forms\fmrAgregarDocente.resx">
+      <DependentUpon>fmrAgregarDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrAgregarEspecializacion.resx">
       <DependentUpon>fmrAgregarEspecializacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,11 +341,20 @@
     <EmbeddedResource Include="Forms\fmrEdicionEspecializacion.resx">
       <DependentUpon>fmrEdicionEspecializacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrEditarDocente.resx">
+      <DependentUpon>fmrEditarDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrGestionAsignaturas.resx">
       <DependentUpon>fmrGestionAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrGestionDocentes.resx">
+      <DependentUpon>fmrGestionDocentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrGestionEspecializaciones.resx">
       <DependentUpon>fmrGestionEspecializaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrGestionEstudiantes.resx">
+      <DependentUpon>fmrGestionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrLogin.resx">
       <DependentUpon>fmrLogin.cs</DependentUpon>
@@ -325,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmrMenuGestionUsuarios.resx">
       <DependentUpon>fmrMenuGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmrRecuperarClave.resx">
+      <DependentUpon>fmrRecuperarClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConsultaExpediente.resx">
       <DependentUpon>frmConsultaExpediente.cs</DependentUpon>

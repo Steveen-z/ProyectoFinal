@@ -31,8 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnModificarEliminarUsuario = new System.Windows.Forms.Button();
-            this.btnCrearUsuario = new System.Windows.Forms.Button();
+            this.btnGestionEstudiantes = new System.Windows.Forms.Button();
+            this.btnGestionDocente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,8 +43,8 @@
             this.panel1.BackgroundImage = global::ProyectoFinal.Properties.Resources.FondoLogin2;
             this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnModificarEliminarUsuario);
-            this.panel1.Controls.Add(this.btnCrearUsuario);
+            this.panel1.Controls.Add(this.btnGestionEstudiantes);
+            this.panel1.Controls.Add(this.btnGestionDocente);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -65,6 +65,7 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // label1
             // 
@@ -77,33 +78,35 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Gestión de usuarios";
             // 
-            // btnModificarEliminarUsuario
+            // btnGestionEstudiantes
             // 
-            this.btnModificarEliminarUsuario.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnModificarEliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificarEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarEliminarUsuario.ForeColor = System.Drawing.Color.Transparent;
-            this.btnModificarEliminarUsuario.Location = new System.Drawing.Point(242, 209);
-            this.btnModificarEliminarUsuario.Name = "btnModificarEliminarUsuario";
-            this.btnModificarEliminarUsuario.Size = new System.Drawing.Size(340, 46);
-            this.btnModificarEliminarUsuario.TabIndex = 30;
-            this.btnModificarEliminarUsuario.Text = "Modificar o eliminar usuario";
-            this.btnModificarEliminarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificarEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnGestionEstudiantes.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGestionEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionEstudiantes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGestionEstudiantes.Location = new System.Drawing.Point(242, 209);
+            this.btnGestionEstudiantes.Name = "btnGestionEstudiantes";
+            this.btnGestionEstudiantes.Size = new System.Drawing.Size(340, 46);
+            this.btnGestionEstudiantes.TabIndex = 30;
+            this.btnGestionEstudiantes.Text = "Gestion Estudiantes";
+            this.btnGestionEstudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGestionEstudiantes.UseVisualStyleBackColor = false;
+            this.btnGestionEstudiantes.Click += new System.EventHandler(this.btnGestionEstudiantes_Click);
             // 
-            // btnCrearUsuario
+            // btnGestionDocente
             // 
-            this.btnCrearUsuario.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCrearUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearUsuario.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(242, 146);
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(340, 46);
-            this.btnCrearUsuario.TabIndex = 29;
-            this.btnCrearUsuario.Text = "Agregar usuarios";
-            this.btnCrearUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnGestionDocente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGestionDocente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionDocente.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGestionDocente.Location = new System.Drawing.Point(242, 146);
+            this.btnGestionDocente.Name = "btnGestionDocente";
+            this.btnGestionDocente.Size = new System.Drawing.Size(340, 46);
+            this.btnGestionDocente.TabIndex = 29;
+            this.btnGestionDocente.Text = "Gestion Docente";
+            this.btnGestionDocente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGestionDocente.UseVisualStyleBackColor = false;
+            this.btnGestionDocente.Click += new System.EventHandler(this.btnGestionDocente_Click);
             // 
             // pictureBox1
             // 
@@ -124,6 +127,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fmrMenuGestionUsuarios";
             this.Text = "fmrMenuGestionUsuarios";
+            this.Load += new System.EventHandler(this.fmrMenuGestionUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -136,8 +140,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnModificarEliminarUsuario;
-        private System.Windows.Forms.Button btnCrearUsuario;
+        private System.Windows.Forms.Button btnGestionEstudiantes;
+        private System.Windows.Forms.Button btnGestionDocente;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
