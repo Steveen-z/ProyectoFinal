@@ -41,7 +41,7 @@ namespace ProyectoFinal.Repositorios
 
         public List<Estudiantes> ObtenerEstudiantesPorNivel(int idNivel, int? idEspecializacion)
         {
-            //
+            
             List<Estudiantes> lista = new List<Estudiantes>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))

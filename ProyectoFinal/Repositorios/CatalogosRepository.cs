@@ -15,7 +15,6 @@ namespace ProyectoFinal.Repositorios
             _connectionString = connectionString;
         }
 
-        // CONSULTA DE CATALOGOS
 
         public List<NivelesEducativos> ObtenerNiveles()
         {
@@ -99,7 +98,6 @@ namespace ProyectoFinal.Repositorios
             return lista;
         }
 
-        // INICIALIZACION DE DATOS 
 
         private int? ObtenerIdNivel(string tipoBachillerato, int anio)
         {
@@ -223,21 +221,17 @@ namespace ProyectoFinal.Repositorios
 
             var asignaturasAInsertar = new List<(string nombre, int? idNivel, int? idEspecializacion)>
             {
-                // Asignaturas Generales
                 ("Lenguaje y Lit. I", idGen1, null), ("Matemática I", idGen1, null),
                 ("Ciencias Nat. I", idGen1, null), ("Estudios Sociales I", idGen1, null),
                 ("Lenguaje y Lit. II", idGen2, null), ("Matemática II", idGen2, null),
                 ("Ciencias Nat. II", idGen2, null), ("Estudios Sociales II", idGen2, null),
 
-                // Asignaturas Desarrollo de Software
                 ("Fundamentos de TI", idTec1, idSW), ("Lógica de Programación", idTec2, idSW),
                 ("Base de Datos Avanzada", idTec3, idSW),
                 
-                // Asignaturas Contaduría y Finanzas
                 ("Contabilidad Básica", idTec1, idCF), ("Auditoría Financiera", idTec2, idCF),
                 ("Leyes Tributarias", idTec3, idCF),
 
-                // Asignaturas Enfermería
                 ("Introducción a la Salud", idTec1, idEnf), ("Primeros Auxilios", idTec2, idEnf),
                 ("Farmacología Básica", idTec3, idEnf),
             };
@@ -275,7 +269,6 @@ namespace ProyectoFinal.Repositorios
                 }
             }
         }
-        // Modificar Especializacion
         public bool ModificarEspecializacion(int id, string nuevoNombre)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -289,11 +282,9 @@ namespace ProyectoFinal.Repositorios
             }
         }
         
-        // Eliminar Especializacioon   NO va implementada
         public bool EliminarEspecializacion(int id)
         {
 
-            // Detalle a completaaaaaaaaaaaaaaaaaaaaaar
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 string query = "DELETE FROM Especializaciones WHERE IdEspecializacion = @Id";
@@ -304,10 +295,8 @@ namespace ProyectoFinal.Repositorios
             }
         }
 
-        //Crear Especializacion
         public bool AgregarEspecializacion(string nombre)
         {
-            // Verifica si la especializacion ya existe para evitar duplicados
             if (ObtenerIdEspecializacion(nombre) != null)
             {
                 return false; 
@@ -315,7 +304,6 @@ namespace ProyectoFinal.Repositorios
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                // La consulta de insercin
                 string query = "INSERT INTO Especializaciones (NombreEspecializacion) VALUES (@Nombre)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
@@ -326,7 +314,6 @@ namespace ProyectoFinal.Repositorios
         }
 
 
-        // Metodo para cargar Niveles filtrados para el ComboBox 
 
 
         public DataTable ObtenerNivelesPorEspecializacion(int? idEspecializacion)
@@ -351,7 +338,6 @@ namespace ProyectoFinal.Repositorios
         }
 
 
-        // Metodo para cargar Asignaturas filtradas
         public DataTable ObtenerAsignaturas(int? idNivel, int? idEspecializacion)
         {
             DataTable dt = new DataTable();
@@ -429,7 +415,6 @@ namespace ProyectoFinal.Repositorios
                     cmd.Parameters.AddWithValue("@IdAsignatura", idAsignatura);
                     conn.Open();
 
-                    // Ejecuta la consulta y asigna el resultado a la variable.
                     int count = (int)cmd.ExecuteScalar();
                     estaEnUso = count > 0;
                 }
@@ -442,7 +427,6 @@ namespace ProyectoFinal.Repositorios
             return estaEnUso;
         }
 
-        // Mtodo para Agregar una nueva Asignatura 
         public bool AgregarAsignatura(string nombre, int idNivel, int? idEspecializacion)
         {
             string query = "INSERT INTO Asignaturas (NombreAsignatura, IdNivel, IdEspecializacion) VALUES (@Nombre, @IdNivel, @IdEspecializacion)";
@@ -458,7 +442,6 @@ namespace ProyectoFinal.Repositorios
             }
         }
 
-        // Metodo para Modificar una Asignatura
         public bool ModificarAsignatura(int idAsignatura, string nombre, int idNivel, int? idEspecializacion)
         {
             string query = "UPDATE Asignaturas SET NombreAsignatura = @Nombre, IdNivel = @IdNivel, IdEspecializacion = @IdEspecializacion WHERE IdAsignatura = @IdAsignatura";

@@ -17,9 +17,11 @@ namespace ProyectoFinal.Clases
         public int IdNivel { get; set; }
         
         public int? IdEspecializacion { get; set; }
-        public int IdUsuario { get; set; } 
+        public int IdUsuario { get; set; }
 
-        
+        public string CodigoAcceso { get; set; } // borrar si se quiebra el codigo
+
+
         public Estudiantes() { }
 
         

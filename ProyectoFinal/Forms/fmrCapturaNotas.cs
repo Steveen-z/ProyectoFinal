@@ -54,7 +54,6 @@ namespace ProyectoFinal.Forms
                     if (dgvAlumnos.Columns.Contains("IdEspecializacion"))
                         dgvAlumnos.Columns["IdEspecializacion"].Visible = false;
 
-                    // Hacer la columna de nombre de solo lectura
                     if (dgvAlumnos.Columns.Contains("NombreCompleto"))
                     {
                         dgvAlumnos.Columns["NombreCompleto"].ReadOnly = true;

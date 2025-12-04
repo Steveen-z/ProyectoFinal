@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnAgregarAsignatura = new System.Windows.Forms.Button();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,15 +67,15 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvAsignaturas, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 483);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1133, 594);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -84,10 +84,10 @@
             this.panel2.Controls.Add(this.txtNombreAsignatura);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(2, 51);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(3, 62);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(846, 28);
+            this.panel2.Size = new System.Drawing.Size(1127, 35);
             this.panel2.TabIndex = 2;
             // 
             // txtNombreAsignatura
@@ -95,20 +95,20 @@
             this.txtNombreAsignatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAsignatura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtNombreAsignatura.Location = new System.Drawing.Point(209, 6);
-            this.txtNombreAsignatura.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreAsignatura.Location = new System.Drawing.Point(279, 7);
+            this.txtNombreAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreAsignatura.Name = "txtNombreAsignatura";
-            this.txtNombreAsignatura.Size = new System.Drawing.Size(437, 17);
+            this.txtNombreAsignatura.Size = new System.Drawing.Size(583, 21);
             this.txtNombreAsignatura.TabIndex = 1;
             this.txtNombreAsignatura.TextChanged += new System.EventHandler(this.txtNombreAsignatura_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.Diseño_sin_título__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(506, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(675, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -118,10 +118,10 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 45);
+            this.panel1.Size = new System.Drawing.Size(1127, 56);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -129,10 +129,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(401, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 31);
+            this.label1.Size = new System.Drawing.Size(351, 38);
             this.label1.TabIndex = 33;
             this.label1.Text = "Gestión de asignaturas";
             // 
@@ -147,11 +146,20 @@
             this.panel3.Controls.Add(this.cmbEspecializacion);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(2, 83);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(3, 101);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(846, 61);
+            this.panel3.Size = new System.Drawing.Size(1127, 76);
             this.panel3.TabIndex = 3;
+            // 
+            // cmbNivel
+            // 
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Location = new System.Drawing.Point(145, 27);
+            this.cmbNivel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(243, 24);
+            this.cmbNivel.TabIndex = 41;
             // 
             // btnLimpiar
             // 
@@ -159,10 +167,10 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.Location = new System.Drawing.Point(746, 15);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Location = new System.Drawing.Point(995, 18);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(78, 28);
+            this.btnLimpiar.Size = new System.Drawing.Size(104, 34);
             this.btnLimpiar.TabIndex = 40;
             this.btnLimpiar.Text = "Limipar";
             this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -174,10 +182,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(448, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 19);
+            this.label4.Size = new System.Drawing.Size(150, 23);
             this.label4.TabIndex = 39;
             this.label4.Text = "Especializacion:";
             // 
@@ -186,10 +193,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(72, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.Size = new System.Drawing.Size(62, 23);
             this.label3.TabIndex = 38;
             this.label3.Text = "Nivel:";
             // 
@@ -199,10 +205,10 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.Location = new System.Drawing.Point(653, 15);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(871, 18);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(78, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(104, 34);
             this.btnBuscar.TabIndex = 37;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -212,10 +218,10 @@
             // cmbEspecializacion
             // 
             this.cmbEspecializacion.FormattingEnabled = true;
-            this.cmbEspecializacion.Location = new System.Drawing.Point(461, 20);
-            this.cmbEspecializacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEspecializacion.Location = new System.Drawing.Point(615, 25);
+            this.cmbEspecializacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEspecializacion.Name = "cmbEspecializacion";
-            this.cmbEspecializacion.Size = new System.Drawing.Size(183, 21);
+            this.cmbEspecializacion.Size = new System.Drawing.Size(243, 24);
             this.cmbEspecializacion.TabIndex = 36;
             // 
             // label2
@@ -223,10 +229,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(5, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
+            this.label2.Size = new System.Drawing.Size(66, 23);
             this.label2.TabIndex = 34;
             this.label2.Text = "Filtros";
             // 
@@ -236,10 +241,10 @@
             this.panel4.Controls.Add(this.btnRegresar);
             this.panel4.Controls.Add(this.btnAgregarAsignatura);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(2, 444);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(3, 546);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(846, 37);
+            this.panel4.Size = new System.Drawing.Size(1127, 46);
             this.panel4.TabIndex = 4;
             // 
             // btnRegresar
@@ -248,10 +253,10 @@
             this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegresar.Location = new System.Drawing.Point(57, 4);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar.Location = new System.Drawing.Point(76, 5);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(88, 28);
+            this.btnRegresar.Size = new System.Drawing.Size(117, 34);
             this.btnRegresar.TabIndex = 33;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -264,10 +269,10 @@
             this.btnAgregarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarAsignatura.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregarAsignatura.Location = new System.Drawing.Point(617, 4);
-            this.btnAgregarAsignatura.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarAsignatura.Location = new System.Drawing.Point(823, 5);
+            this.btnAgregarAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarAsignatura.Name = "btnAgregarAsignatura";
-            this.btnAgregarAsignatura.Size = new System.Drawing.Size(172, 28);
+            this.btnAgregarAsignatura.Size = new System.Drawing.Size(229, 34);
             this.btnAgregarAsignatura.TabIndex = 32;
             this.btnAgregarAsignatura.Text = "Agregar especializacion";
             this.btnAgregarAsignatura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -278,30 +283,21 @@
             // 
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(2, 148);
-            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAsignaturas.Location = new System.Drawing.Point(3, 181);
+            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.RowHeadersWidth = 51;
             this.dgvAsignaturas.RowTemplate.Height = 24;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(846, 292);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(1127, 361);
             this.dgvAsignaturas.TabIndex = 5;
-            // 
-            // cmbNivel
-            // 
-            this.cmbNivel.FormattingEnabled = true;
-            this.cmbNivel.Location = new System.Drawing.Point(109, 22);
-            this.cmbNivel.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(183, 21);
-            this.cmbNivel.TabIndex = 41;
             // 
             // fmrGestionAsignaturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 483);
+            this.ClientSize = new System.Drawing.Size(1133, 594);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fmrGestionAsignaturas";
             this.Text = "fmrGestionAsignaturas";
             this.Load += new System.EventHandler(this.fmrGestionAsignaturas_Load);

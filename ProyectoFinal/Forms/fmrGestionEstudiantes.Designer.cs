@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtNombreEstuadiante = new System.Windows.Forms.TextBox();
+            this.txtNombreBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,11 +77,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1133, 594);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.txtNombreEstuadiante);
+            this.panel2.Controls.Add(this.txtNombreBusqueda);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 62);
@@ -90,16 +91,16 @@
             this.panel2.Size = new System.Drawing.Size(1127, 35);
             this.panel2.TabIndex = 2;
             // 
-            // txtNombreEstuadiante
+            // txtNombreBusqueda
             // 
-            this.txtNombreEstuadiante.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreEstuadiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstuadiante.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtNombreEstuadiante.Location = new System.Drawing.Point(279, 7);
-            this.txtNombreEstuadiante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNombreEstuadiante.Name = "txtNombreEstuadiante";
-            this.txtNombreEstuadiante.Size = new System.Drawing.Size(583, 21);
-            this.txtNombreEstuadiante.TabIndex = 1;
+            this.txtNombreBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreBusqueda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtNombreBusqueda.Location = new System.Drawing.Point(279, 7);
+            this.txtNombreBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreBusqueda.Name = "txtNombreBusqueda";
+            this.txtNombreBusqueda.Size = new System.Drawing.Size(583, 21);
+            this.txtNombreBusqueda.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -273,6 +274,7 @@
             this.btnAgregarEstudiante.Text = "Agregar estudiante";
             this.btnAgregarEstudiante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarEstudiante.UseVisualStyleBackColor = false;
+            this.btnAgregarEstudiante.Click += new System.EventHandler(this.btnAgregarEstudiante_Click);
             // 
             // dgvEstudiantes
             // 
@@ -294,6 +296,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fmrGestionEstudiantes";
             this.Text = "fmrGestionEstudiantes";
+            this.Load += new System.EventHandler(this.fmrGestionEstudiantes_Load_1);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -312,7 +315,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtNombreEstuadiante;
+        private System.Windows.Forms.TextBox txtNombreBusqueda;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
